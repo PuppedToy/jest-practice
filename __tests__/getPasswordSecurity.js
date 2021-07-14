@@ -3,25 +3,25 @@ const { getPasswordSecurity } = require('..');
 describe('getPasswordSecurity', () => {
 
     it('Should throw an error if no arguments are passed', () => {
-        expect(getPasswordSecurity()).toThrow();
+        expect(() => getPasswordSecurity()).toThrow();
     });
 
     it('Should throw an error if the argument is not string', () => {
         const input = 5;
 
-        expect(getPasswordSecurity(input)).toThrow();
+        expect(() => getPasswordSecurity(input)).toThrow();
     });
 
     it('Should throw an error if a 7-length string is passed', () => {
         const input = 'passwor';
 
-        expect(getPasswordSecurity(input)).toThrow();
+        expect(() => getPasswordSecurity(input)).toThrow();
     });
 
     it('Should NOT throw an error if a 8-length string is passed', () => {
         const input = 'password';
 
-        expect(getPasswordSecurity('password')).not.toThrow();
+        expect(() => getPasswordSecurity('password')).not.toThrow();
     });
 
     it('Should return WEAK for an 8-length full lower case string', () => {
