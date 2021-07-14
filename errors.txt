@@ -1,0 +1,4 @@
+- Should throw if the argument is not string
+- Should NOT throw if the argument is an empty string
+- Should return "a_b" if "a\tb" is passed (\t, \n and other space symbols are not being processed as spaces)
+- Should return "ab" if "AB" is passed: lower case comes after symbol removal
